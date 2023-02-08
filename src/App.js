@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  createTheme,
+  TextField,
+  ThemeProvider,
+} from "@mui/material";
 
-function App() {
+const App = () => {
+  const darkTheme = createTheme({
+    palette: {
+      mode: "dark",
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <div className="flex justify-center gap-3 items-center max-h-screen h-screen w-screen overflow-auto">
+        <TextField size="small" className="" placeholder="Search..." />
+       
+      </div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
